@@ -22,7 +22,8 @@ export function TaskList() {
     /* Since a form will likely be used to handle adding tasks to TaskList, e.preventDefault() will prevent the default action of a form refreshing the browser on submit */
     e.preventDefault();
 
-    dispatch(addNewTask(task));
+    /* Math.random() is used to generate a random id for each task. While this approach works, it could be beneficial to incorporate an approach that guarantees uniqueness among ids */
+    dispatch(addNewTask({task: task, id: Math.floor(Math.random() * 100000)}));
 
     /* Clears the input on submit */
     setTask('');
@@ -33,10 +34,15 @@ export function TaskList() {
     <div>
       <h2>Today's Tasks</h2>
       <div>
-        {/* List of tasks */}
+        <ul>
+          {tasks.map(task => {
+            return <li>{task.task}</li>
+          })}
+        </ul>
       </div>
       <form onSubmit={handleAddTask}>
-        <input value={task} onChange={handleTaskChange} placeholder="Add new task..." />
+        <input value={task} onChange={handleTaskChange} placeholder="Add new task..." type="text" />
+        <input type="submit" value="Add task" />
       </form>
     </div>
   );
