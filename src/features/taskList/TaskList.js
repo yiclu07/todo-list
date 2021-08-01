@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   addNewTask,
-  deleteTask
+  deleteTask,
+  selectTasks
 } from './taskListSlice.js';
 import styles from './TaskList.module.css';
 
 export function TaskList() {
+  const tasks = useSelector(selectTasks);
   const dispatch = useDispatch();
 
   /* task will store a string that corresponds to the user's input and will be used to add new tasks to TaskList */
