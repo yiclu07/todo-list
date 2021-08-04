@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   addNewTask,
-  deleteTask,
   selectTasks
 } from './taskListSlice.js';
+import Task from '../../components/Task.js';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './TaskList.module.css';
 
 export function TaskList() {
@@ -23,7 +24,7 @@ export function TaskList() {
     e.preventDefault();
 
     /* Math.random() is used to generate a random id for each task. While this approach works, it could be beneficial to incorporate an approach that guarantees uniqueness among ids */
-    dispatch(addNewTask({task: task, id: Math.floor(Math.random() * 100000)}));
+    dispatch(addNewTask({task: task, id: uuidv4()}));
 
     /* Clears the input on submit */
     setTask('');
@@ -36,7 +37,7 @@ export function TaskList() {
       <div>
         <ul>
           {tasks.map(task => {
-            return <li>{task.task}</li>
+            return <Task task={task} />
           })}
         </ul>
       </div>
