@@ -1,4 +1,9 @@
-/* The container */
+/* The list */
+.list {
+  list-style-type: none;
+}
+
+/* The container for checkboxes */
 .container {
   display: block;
   position: relative;

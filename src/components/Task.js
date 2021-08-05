@@ -11,13 +11,14 @@ export default function Task({task}) {
   };
 
   return (
-    <li>
+    <li className={styles.list}>
       <label className={styles.container}>
         <input type="checkbox"/>
         <span className={styles.checkmark}></span>
         {task.task}
+        <span><button onClick={handleDeleteTask} aria-label="Remove">X</button></span>
       </label>
-      <button onClick={handleDeleteTask} aria-label="Remove">X</button>
+      
     </li>
   )
 }
