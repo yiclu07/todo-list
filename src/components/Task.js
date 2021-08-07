@@ -14,9 +14,9 @@ export default function Task({task}) {
     <li className={styles.list}>
       <label className={styles.container}>
         <input type="checkbox"/>
-        <span className={styles.checkmark}></span>
-        {task.task}
-        <span><button onClick={handleDeleteTask} aria-label="Remove">X</button></span>
+        <div className={styles.checkmark}></div>
+        <p className={styles.task}>{task.task}</p>
+        <button onClick={handleDeleteTask} aria-label="Remove" className={styles.deleteBtn}>X</button>
       </label>
       
     </li>

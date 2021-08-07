@@ -1,0 +1,16 @@
+.listContainer {
+  width: 35%;
+}
+
+.taskContainer {
+  text-align: left;
+}
+
+.taskContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}

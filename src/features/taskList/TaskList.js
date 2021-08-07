@@ -32,10 +32,10 @@ export function TaskList() {
   }
 
   return (
-    <div>
+    <div className={styles.listContainer}>
       <h2>Today's Tasks</h2>
-      <div>
-        <ul>
+      <div className={styles.taskContainer}>
+        <ul className={styles.list}>
           {tasks.map(task => {
             return <Task task={task} />
           })}
