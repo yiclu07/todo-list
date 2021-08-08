@@ -35,31 +35,33 @@ export function TaskList() {
 
   return (
     <div>
-      <div className={styles.listContainer}>
-        <h2>Today's Tasks</h2>
-        <div className={styles.taskContainer}>
-          <ul className={styles.list}>
-            {tasks.map(task => {
-              return <Task task={task} />
-            })}
-          </ul>
+      <div className={styles.mainContainer}>
+        <div className={styles.listContainer}>
+          <h2>Today's Tasks</h2>
+          <div className={styles.taskContainer}>
+            <ul className={styles.list}>
+              {tasks.map(task => {
+                return <Task task={task} />
+              })}
+            </ul>
+          </div>
         </div>
-        <form onSubmit={handleAddTask}>
-          <input value={task} onChange={handleTaskChange} placeholder="Add new task..." type="text" />
-          <input type="submit" value="Add task" />
-        </form>
-      </div>
 
-      <div className={styles.listContainer}>
-        <h2>Completed Tasks</h2>
-        <div className={styles.taskContainer}>
-          <ul className={styles.list}>
-            {completedTasks.map(task => {
-              return <Task task={task} />
-            })}
-          </ul>
+        <div className={styles.listContainer}>
+          <h2>Completed Tasks</h2>
+          <div className={styles.taskContainer}>
+            <ul className={styles.list}>
+              {completedTasks.map(task => {
+                return <Task task={task} />
+              })}
+            </ul>
+          </div>
         </div>
       </div>
+      <form onSubmit={handleAddTask}>
+        <input value={task} onChange={handleTaskChange} placeholder="Add new task..." type="text" />
+        <input type="submit" value="Add task" />
+      </form>
     </div>
   );
 }

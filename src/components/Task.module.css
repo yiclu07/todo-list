@@ -16,7 +16,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 100%;
+  width: 80%;
+  transform: translate(16px);
 }
 
 /* Hide the browser's default checkbox */

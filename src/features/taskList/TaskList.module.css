@@ -1,5 +1,12 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 75vw;
+}
+
 .listContainer {
-  width: 35%;
+  width: 50%;
 }
 
 .taskContainer {
