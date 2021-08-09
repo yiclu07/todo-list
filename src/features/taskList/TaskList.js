@@ -25,6 +25,10 @@ export function TaskList() {
     /* Since a form will likely be used to handle adding tasks to TaskList, e.preventDefault() will prevent the default action of a form refreshing the browser on submit */
     e.preventDefault();
 
+    if (!task) {
+      return;
+    }
+
     /* Math.random() is used to generate a random id for each task. While this approach works, it could be beneficial to incorporate an approach that guarantees uniqueness among ids */
     dispatch(addNewTask({task: task, id: uuidv4(), completed: false}));
 
