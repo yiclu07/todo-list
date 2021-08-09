@@ -59,8 +59,8 @@ export function TaskList() {
         </div>
       </div>
       <form onSubmit={handleAddTask}>
-        <input value={task} onChange={handleTaskChange} placeholder="Add new task..." type="text" />
-        <input type="submit" value="Add task" />
+        <input value={task} onChange={handleTaskChange} placeholder="Add new task..." type="text" className={styles.formInput} />
+        <input type="submit" value="Add task" className={styles.submitBtn} />
       </form>
     </div>
   );
