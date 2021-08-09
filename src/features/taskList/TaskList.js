@@ -45,7 +45,7 @@ export function TaskList() {
           <div className={styles.taskContainer}>
             <ul className={styles.list}>
               {tasks.map(task => {
-                return <Task task={task} />
+                return <Task task={task} key={task.id}/>
               })}
             </ul>
           </div>
@@ -56,7 +56,7 @@ export function TaskList() {
           <div className={styles.taskContainer}>
             <ul className={styles.list}>
               {completedTasks.map(task => {
-                return <Task task={task} />
+                return <Task task={task} key={task.id} />
               })}
             </ul>
           </div>
