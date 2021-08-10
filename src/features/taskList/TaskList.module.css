@@ -20,6 +20,12 @@
 .list {
   padding: 0;
   margin: 0;
+  overflow: scroll;
+  height: 50vh;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
 }
 
 .formInput {
@@ -43,4 +49,8 @@
   color: #2196f3;
   background-color: #fff;
   border: 2px solid #2196f3;
+}
+
+.inputForm {
+  height: 10vh;
 }
