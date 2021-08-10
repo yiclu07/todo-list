@@ -1,0 +1,29 @@
+.incompleteIndicator {
+  color: red;
+}
+
+.completedIndicator {
+  color: #2196f3;
+}
+
+.trackerContainer {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.blockContainer {
+  display: flex;
+  justify-content: stretch;
+}
+
+.block {
+  list-style-type: none;
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.blockDiv {
+  min-width: 20px;
+  min-height: 24px;
+}

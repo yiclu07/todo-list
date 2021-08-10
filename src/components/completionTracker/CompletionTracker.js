@@ -4,6 +4,7 @@ import {
   selectTasks,
   selectCompletedTasks
 } from '../../features/taskList/taskListSlice.js';
+import styles from './CompletionTracker.module.css';
 
 export default function CompletionTracker() {
   const incompleteTasks = useSelector(selectTasks);
@@ -21,11 +22,13 @@ export default function CompletionTracker() {
   }
 
   return (
-    <div>
-      <h2>{completedTasks.length} / {totalListLength}</h2>
-      <ul>
-        {blockArray.map((block, index) => {
-          return <li style={{backgroundColor: block}} key={index}>{block}</li>
+    <div className={styles.trackerContainer}>
+      <h2 className={completedTasks.length === totalListLength ? styles.completedIndicator : styles.incompleteIndicator}>{completedTasks.length} / {totalListLength}</h2>
+      <ul className={styles.blockContainer}>
+        {blockArray.slice(0).reverse().map((block, index) => {
+          return <li style={{backgroundColor: block}} className={styles.block} key={index}>
+            <div className={styles.blockDiv}></div>
+          </li>
         })}
       </ul>
     </div>
