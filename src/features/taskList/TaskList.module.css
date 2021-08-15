@@ -54,3 +54,23 @@
 .inputForm {
   height: 10vh;
 }
+
+@media only screen and (max-width: 600px) {
+  .taskListContainer {
+    position: relative;
+    top: 20vh;
+  }
+
+  .mainContainer {
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .listContainer {
+    width: 100%;
+  }
+
+  .list {
+    height: fit-content;
+  }
+}

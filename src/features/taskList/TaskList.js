@@ -38,7 +38,7 @@ export function TaskList() {
   }
 
   return (
-    <div>
+    <div className={styles.taskListContainer}>
       <div className={styles.mainContainer}>
         <div className={styles.listContainer}>
           <h2>Today's Tasks</h2>
